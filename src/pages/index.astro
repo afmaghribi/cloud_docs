@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Cloud Engineering Docs">
+  <div class="mb-12 text-center md:text-left">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
+      Cloud Engineering <span class="text-primary-600 dark:text-primary-400">Reference</span>
+    </h1>
+    <p class="text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl">
+      An encyclopedia of Cloud Engineering — infrastructure as code, networking, security, and container orchestration.
+    </p>
+  </div>
+
+  <div class="bg-white/50 dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm backdrop-blur-sm p-8 md:p-12 transition-all hover:shadow-md">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
+      <h2>What is This Reference?</h2>
+      <p>
+        This reference provides a comprehensive collection of Cloud Engineering knowledge, organized into focused sections:
+      </p>
+
+      <h3>📘 Glossary</h3>
+      <p>
+        Browse the <a href="/glossary" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Glossary</a> for definitions of cloud terms, concepts, and components. Each entry includes detailed explanations to help you understand the landscape.
+      </p>
+
+      <h3>🛠 Topics</h3>
+      <p>
+        Reference <a href="/topics" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Topics</a> for detailed information on architecture patterns, security concepts, and operational best practices.
+      </p>
+
+      <h2>Purpose</h2>
+      <p>
+        This reference is designed to help keep track of important concepts and document best practices for daily cloud operations.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allTerms = await getCollection('glossary');
+// Sort alphabetically
+allTerms.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Glossary - Cloud Docs">
+  <div class="mb-10">
+    <h1 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Glossary</h1>
+    <p class="text-lg text-zinc-600 dark:text-zinc-400">Definitions of key Cloud Engineering terms.</p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {allTerms.map((term) => (
+      <a href={`/glossary/${term.slug}`} class="block group">
+        <div class="h-full bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-primary-500/30 dark:hover:border-primary-500/30">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+            {term.data.title}
+          </h2>
+          {term.data.description && (
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm">
+              {term.data.description}
+            </p>
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
